@@ -7,9 +7,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class FunRestController {
 
     // expose "/" that return "Hello World"
-
     @GetMapping("/")    // tells Spring Boot what URL this method should respond to (example: http://localhost:8080/)
     public String sayHello(){
         return "Hello World!";
+    }
+
+    // expose a new endpoint for "workout" 
+    @GetMapping("/workout")
+    public String getDailyWorkout(){
+        return "Run a hard 5k!";
+    }
+
+    // expose a new endpoint for "fortune"
+    @GetMapping("/fortune")
+    public String getDailyFortune(){
+        return "Today is your lucky day!";
     }
 }
